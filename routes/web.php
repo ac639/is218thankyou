@@ -12,25 +12,26 @@
 */
 
 Route::get('/', function () {
-    return view('pages.index');
-});
+    return view('pages.home');
+})->name('home');
 
-Route::get('/about', function () {
-    return view('pages.about');
-});
+//Route::get('/about', function () {
+//    return view('pages.about');
+//});
 
-Route::get('/contact', function () {
-    return view('pages.contact');
-});
+//Route::get('/contact', function () {
+//    return view('pages.contact');
+//});
 
-Route::post('/contact', function () {
-
+//Route::post('/contact', function () {
     ////////////////////////////
     //$data = request()->all();
     //dd($data);
     //echo "Name: " . $data['name'] . '<br>';
     ////////////////////////////
 
-    
+//})->name('contact');
 
-});
+Route::get('/contact', 'PagesController@contact')->name('contact');
+Route::post('/contact', 'PagesController@store')->name('contact.store');
+Route::get('/thanks/{name}', 'PagesController@thanks')->name('thanks');

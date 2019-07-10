@@ -4,7 +4,7 @@
 
     <h1>Contact</h1>
 
-    <form action="/contact" method="post">
+    <form method="post" action="{{route('contact.store')}}">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="name">Name</label>
